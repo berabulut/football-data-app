@@ -4,8 +4,11 @@ import Axios from  'axios'
 
 export default class leagueTable extends React.Component {
     state = {
-        text: [],
-        index: []
+        team: [],
+        points: [],
+        mGoal: [],
+        pGoal: [],
+        avarage: []
       }
       
       options = {
@@ -25,10 +28,14 @@ export default class leagueTable extends React.Component {
       getData = async () => {
         console.log(typeof(this.state.text))
         let res =  await Axios.get(this.options.url.url, this.options.header);
+        console.log(res.data.standings[0].table)
         res.data.standings[0].table.map((data, index) => {
           this.setState(() => {
-            this.state.text.push(data.team.name)
-            this.state.index.push(index + 1)
+            this.state.team.push(data.team.name)
+            this.state.points.push(data.points)
+            this.state.mGoal.push(data.goalsAgainst)
+            this.state.pGoal.push(data.goalsFor)
+            this.state.avarage.push(data.goalDifference)
           });
         })
         this.forceUpdate()
@@ -40,27 +47,34 @@ export default class leagueTable extends React.Component {
 
     render() {
       return(
-          <table>
+        <div>
+        <h2 id = "pLeagueTitle">PREMIER LEAGUE</h2>
+          <table className = "PremierLeagueTable">
           <thead>
           <tr>
-            <th>#</th>
-            <th>takım</th> 
+            <th>SIRA</th>
+            <th>TAKIM</th>
+            <th>PUAN</th>
+            <th>Atılan Gol</th>
+            <th>Yenilen Gol</th>
+            <th>AVERAJ</th> 
           </tr>
           {
-            this.state.text.map((i,j) => {
+            this.state.team.map((i,j) => {
               return(
                 <tr>
-                  <td>
-                  {this.state.index[j]}
-                  </td>
-                  <td>
-                    {this.state.text[j]}
-                  </td>
+                  <td>{ j + 1 }</td>
+                  <td>{ this.state.team[j] }</td>
+                  <td>{ this.state.points[j] }</td>
+                  <td> { this.state.pGoal[j] }</td>
+                  <td> { this.state.mGoal[j] }</td>
+                  <td>{ this.state.avarage[j] }</td>
                 </tr>
               )
             })
           }
           </thead> 
         </table>
+        </div>
         
       )}}  
