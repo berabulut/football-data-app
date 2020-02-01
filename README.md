@@ -4,5 +4,5 @@ Using https://www.football-data.org/ API.
 ## Available Scripts
 
 To start: 
-#npm run-script build 
+#npm install 
 #npm start
