@@ -97,7 +97,7 @@ export default class leagueTable extends React.Component {
           </thead> 
         </table>
         </div>
-  //  --------------------------------------------------------------------------------------------------
+        
         <div>
           <table>
             <thead>
