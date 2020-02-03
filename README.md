@@ -3,7 +3,7 @@ Using https://www.football-data.org/ API.
 
 It might take a while to load if you are trying to open the [website](https://bera-football-league-app.herokuapp.com/).
 
-<img src = "https://prnt.sc/qx22pq"></img>
+<img src = "./master/download.png"></img>
 
 
 
