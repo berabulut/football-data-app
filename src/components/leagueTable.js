@@ -2,6 +2,7 @@ import React from 'react';
 import Moment from 'moment';
 import GetDate from '../js/date'
 import Axios from  'axios'
+import pLogo from '../styles/pics/pleague.png'
 
 export default class leagueTable extends React.Component {
     state = {
@@ -25,7 +26,8 @@ export default class leagueTable extends React.Component {
       fixture = {
         home: [],
         away: [],
-        date: []
+        date: [],
+        time: []
       }
 
       componentDidMount() {
@@ -52,7 +54,8 @@ export default class leagueTable extends React.Component {
         matchRes.data.matches.map((data, index) => {
           this.fixture.home.push(data.homeTeam.name)
           this.fixture.away.push(data.awayTeam.name)
-          this.fixture.date.push(Moment(data.utcDate).format('MMMM Do YYYY, h:mm:ss a'))
+          this.fixture.date.push(Moment(data.utcDate).format('MMMM Do YYYY'))
+          this.fixture.time.push(Moment(data.utcDate).format('h:mm:ss a'))
         })
 
         this.forceUpdate()
@@ -67,9 +70,8 @@ export default class leagueTable extends React.Component {
 
     render() {
       return(
+        <div className = "container">
         <div>
-        <div>
-        <h2 id = "pLeagueTitle">PREMIER LEAGUE</h2>
           <table className = "PremierLeagueTable">
           <thead>
           <tr>
@@ -98,10 +100,12 @@ export default class leagueTable extends React.Component {
         </table>
         </div>
         
-        <div>
-          <table>
+        <div className = "fixture">
+          <h2 id = "fixtureTitle">FİKSTÜR</h2>
+          <table className = "fixtureTable">
             <thead>
               <tr>
+                <th>SAAT</th>
                 <th>EV SAHİBİ</th>
                 <th>DEPLASMAN</th>
                 <th>TARİH</th>
@@ -110,6 +114,7 @@ export default class leagueTable extends React.Component {
                 this.fixture.home.map((i,j) => {
                   return(
                     <tr>
+                      <td>{this.fixture.time[j]}</td>
                       <td>{this.fixture.home[j]}</td>
                       <td>{this.fixture.away[j]}</td>
                       <td>{this.fixture.date[j]}</td>
@@ -119,6 +124,9 @@ export default class leagueTable extends React.Component {
               }
             </thead>
           </table>
+        </div>
+        <div>
+          <img id = "pLogo" src = {pLogo}></img>
         </div>
       </div> 
     )}}  
