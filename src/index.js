@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
-import './styles/table.scss'
-import LeagueTable from './components/leagueTable';
+// import './styles/index.css';
+// import './styles/table.scss'
+import App from './components/app';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<LeagueTable />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
