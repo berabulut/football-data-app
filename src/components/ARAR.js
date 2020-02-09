@@ -36,10 +36,7 @@ export default class leagueTable extends React.Component {
 
 
       getData = async () => {
-        console.log(typeof(this.state.text))
         let res =  await Axios.get(this.options.url.leagueTable, this.options.header);
-        console.log(res.data.standings[0].table)
-        // puan durumu
         res.data.standings[0].table.map((data, index) => {
           this.setState(() => {
             this.state.team.push(data.team.name)
@@ -87,11 +84,11 @@ export default class leagueTable extends React.Component {
               return(
                 <tr>
                   <td>{ j + 1 }</td>
-                  <td>{ this.state.team[j] }</td>
-                  <td> { this.state.pGoal[j] }</td>
-                  <td> { this.state.mGoal[j] }</td>
-                  <td>{ this.state.avarage[j] }</td>
-                  <td>{ this.state.points[j] }</td>
+                  <td>{this.state.team[j]}</td>
+                  <td> {this.state.pGoal[j]}</td>
+                  <td> {this.state.mGoal[j]}</td>
+                  <td>{this.state.avarage[j]}</td>
+                  <td>{this.state.points[j]}</td>
                 </tr>
               )
             })
