@@ -6,7 +6,6 @@ import Moment from 'moment';
 import Footer from './footer';
 import LeagueTable from './LeagueTable';
 import FixtureTable from './fixtureTable';
-import pLogo from '../styles/pics/pleague.png'
 
 export default class App extends React.Component  {
    
