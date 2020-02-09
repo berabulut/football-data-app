@@ -1,13 +1,12 @@
 import React from 'react';
 import Teams from './teams';
+import pLogo from '../styles/pics/pleague.png'
 
 const LeagueTable = (props) => (
-    <div>
-        <div className = "league-table-header">
-            <h3 className = "league-table__title">LİG TABLOSU</h3>
-        </div>
-        <div className = "league-table-container">
-            <table className = "league-table" >
+    <div className = "premierLeagueTable__container">
+        <h3 className = "premierLeagueTitle">PREMIER LEAGUE</h3>
+        <div>
+            <table className = "premierLeagueTable" >
                 <thead>
                     <tr>
                         <th>SIRA</th>
@@ -20,7 +19,6 @@ const LeagueTable = (props) => (
                     {
                         props.teams.map((data, index) => (
                             <Teams 
-                                className = "teams-container"
                                 key = {data}
                                 count = { index + 1 }
                                 team = {data}
@@ -35,6 +33,7 @@ const LeagueTable = (props) => (
                 </thead>
             </table>       
         </div>
+        <img id = "pLogo" src = {pLogo} />
     </div>
 )
 

@@ -2,12 +2,10 @@ import React from 'react';
 import Fixture from './fixture';
 
 const FixtureTable  = (props) => (
-    <div>
-        <div className = "fixture-table-header">
-            <h3 className = "fixture-table__title">FİKSTÜR</h3>
-        </div>
-        <div className = "fixture-table-container">
-            <table className = "fixture-table">
+    <div className = "premierLeagueFixtureTable__container">
+        <h3 className = "premierFixtureTitle">FİKSTÜR</h3>
+        <div>
+            <table className = "premierLeagueFixtureTable">
                 <thead>
                     <tr>
                         <th>SAAT</th>
@@ -18,7 +16,6 @@ const FixtureTable  = (props) => (
                     {
                         props.home.map((data, index) => (
                             <Fixture
-                                className = "fixture-container"
                                 key = {data}
                                 count = { index + 1 }
                                 fixtureHome = {data}

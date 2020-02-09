@@ -6,6 +6,7 @@ import Moment from 'moment';
 import Footer from './footer';
 import LeagueTable from './LeagueTable';
 import FixtureTable from './fixtureTable';
+import pLogo from '../styles/pics/pleague.png'
 
 export default class App extends React.Component  {
    
@@ -14,8 +15,9 @@ export default class App extends React.Component  {
           headers: { 'X-Auth-Token':  '754836c7b68145caae82230c32b7eae1' },
         },
         url : {
-          leagueTable: "https://cors-anywhere.herokuapp.com/http://api.football-data.org/v2/competitions/PL/standings",
+          leagueTable: "http://api.football-data.org/v2/competitions/PL/standings",
           matches: `https://api.football-data.org/v2/competitions/PL/matches?dateFrom=${GetDate()}&dateTo=${GetDate('nextWeek')}`
+          // https://cors-anywhere.herokuapp.com/ JUST IN CASE
         }
       }
 
@@ -65,23 +67,26 @@ export default class App extends React.Component  {
 
     render() {
         return(
-          <div>
-            <Header title = "header"/>
-            <div className = "container">
-            <LeagueTable
-              teams = {this.pLeague.teams}
-              points = {this.pLeague.points}
-              avarage = {this.pLeague.avarage}
-              mGoal = {this.pLeague.mGoal}
-              pGoal = {this.pLeague.pGoal}
-            />
-              <FixtureTable
-                home = {this.plFixture.home}
-                away = {this.plFixture.away}
-                date = {this.plFixture.date}
-                time = {this.plFixture.time}
+          <div className = "page">
+            <Header className = "header" title = "FOOTBALL-LEAGUE-APP"/>
+            <div className = "premierLeagueContainer">
+              <LeagueTable
+              className = "section LeagueTable"
+                teams = {this.pLeague.teams}
+                points = {this.pLeague.points}
+                avarage = {this.pLeague.avarage}
+                mGoal = {this.pLeague.mGoal}
+                pGoal = {this.pLeague.pGoal}
               />
-            </div>
+                <FixtureTable
+                  className = "section FixtureTable"
+                  home = {this.plFixture.home}
+                  away = {this.plFixture.away}
+                  date = {this.plFixture.date}
+                  time = {this.plFixture.time}
+                />
+                </div>
+                <Footer className = "footer"/>
           </div>
         )
     }

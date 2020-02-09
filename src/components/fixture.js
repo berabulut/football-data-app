@@ -2,10 +2,10 @@ import React from 'react';
 
 const  Fixture = (props) => (
     <tr>
-        <td className = "fixture__text">{props.fixtureTime}</td>
-        <td className = "fixture__text">{props.fixtureHome}</td>
-        <td className = "fixture__text">{props.fixtureAway}</td>
-        <td className = "fixture__text">{props.fixtureDate}</td>
+        <td>{props.fixtureTime}</td>
+        <td>{props.fixtureHome}</td>
+        <td>{props.fixtureAway}</td>
+        <td>{props.fixtureDate}</td>
     </tr>
 );
 
