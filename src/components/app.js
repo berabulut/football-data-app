@@ -14,8 +14,8 @@ export default class App extends React.Component  {
           headers: { 'X-Auth-Token':  '754836c7b68145caae82230c32b7eae1' },
         },
         url : {
-          leagueTable: "https://cors-anywhere.herokuapp.com/ http://api.football-data.org/v2/competitions/PL/standings",
-          matches: `https://cors-anywhere.herokuapp.com/ https://api.football-data.org/v2/competitions/PL/matches?dateFrom=${GetDate()}&dateTo=${GetDate('nextWeek')}`
+          leagueTable: "https://cors-anywhere.herokuapp.com/http://api.football-data.org/v2/competitions/PL/standings",
+          matches: `https://cors-anywhere.herokuapp.com/https://api.football-data.org/v2/competitions/PL/matches?dateFrom=${GetDate()}&dateTo=${GetDate('nextWeek')}`
           // https://cors-anywhere.herokuapp.com/ JUST IN CASE
         }
       }
