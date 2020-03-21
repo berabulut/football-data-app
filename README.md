@@ -5,8 +5,8 @@ Expected output for now:
 
 <img src = "./public/output.png"></img>
 
-###To start:            
-1. Item A
-2. Item B
-3. Item C
+### To start:            
+1. npm install
+2. npm build
+3. npm start
                 
