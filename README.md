@@ -5,9 +5,8 @@ Expected output for now:
 
 <img src = "./public/output.png"></img>
 
-## To start
-<table>
-    <td>1-npm install </td>
-    <td>2-npm build  </td> 
-    <td>3-npm start</td>  
-</table>
+###To start:            
+1. Item A
+2. Item B
+3. Item C
+                
