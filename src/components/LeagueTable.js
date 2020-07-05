@@ -9,12 +9,12 @@ const LeagueTable = (props) => (
             <table className = "premierLeagueTable" >
                 <thead>
                     <tr>
-                        <th>SIRA</th>
-                        <th>TAKIM</th>
-                        <th>Atılan Gol</th>
-                        <th>Yenilen Gol</th>
-                        <th>AVERAJ</th>
-                        <th>PUAN</th> 
+                        <th>POS</th>
+                        <th>CLUB</th>
+                        <th>Goals For</th>
+                        <th>Goals Against</th>
+                        <th>Goal Difference</th>
+                        <th>Points</th> 
                     </tr>
                     {
                         props.teams.map((data, index) => (

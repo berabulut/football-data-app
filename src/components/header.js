@@ -1,16 +1,13 @@
 import React from 'react';
 
-const Header = (props) => (
+const Header = () => (
     <div className = "header">
         <div className = "container">
-            <h1 className = "header__title"> {props.title} </h1>
+            <h1 className = "header__title"> FOOTBALL LEAGUE APP </h1>
         </div>
     </div>
 );
 
 
-Header.defaultProps = {
-    title: 'Football-League-App'
-};
 
 export default Header;

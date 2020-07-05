@@ -8,6 +8,7 @@
   .page {
     display: flex;
     flex-wrap: wrap;
+    transform: scale(0.8);
   }
 
   .section {
@@ -55,16 +56,18 @@
     
     .premierLeagueFixtureTable__container {
       float: left;
-      margin-top: -860px;
-      margin-left: 700px;
+      margin-top: -900px;
+      margin-bottom: 800px;
+      margin-left: 1100px;
     }
 
     .premierLeagueTable__container {
-      margin-left: 200px;
+      margin-left: 490px;
+      margin-top: -200px;
     }
 
     .premierLeagueTitle {
-      color:slateblue;
+      color:#3D195B;
       font-size: 35px;
       font-weight: 900; 
       margin-left: 49px;
@@ -78,13 +81,19 @@
    }
 
     .page {
-      width: 960px;
+      width: 1500px;
       margin: 0 auto;
     }
     
     .header {
-      height: 180px;
+      height: 200px;
+      margin-top: -150px;
+      margin-bottom: 250px;
       margin-left: 250px;
+    }
+
+    .header__title {
+      font-size: 90px;
     }
 
     .footer {

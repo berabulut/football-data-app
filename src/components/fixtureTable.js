@@ -3,15 +3,15 @@ import Fixture from './fixture';
 
 const FixtureTable  = (props) => (
     <div className = "premierLeagueFixtureTable__container">
-        <h3 className = "premierFixtureTitle">FİKSTÜR</h3>
+        <h3 className = "premierFixtureTitle">FIXTURE</h3>
         <div>
             <table className = "premierLeagueFixtureTable">
                 <thead>
                     <tr>
-                        <th>SAAT</th>
-                        <th>EV SAHİBİ</th>
-                        <th>DEPLASMAN</th>
-                        <th>TARİH</th>
+                        <th>TIME</th>
+                        <th>HOME</th>
+                        <th>AWAY</th>
+                        <th>DATE</th>
                     </tr>
                     {
                         props.home.map((data, index) => (
